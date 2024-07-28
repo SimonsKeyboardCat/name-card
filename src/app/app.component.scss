@@ -1,0 +1,48 @@
+.name-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 370px;
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  &__profile {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #4070f4;
+    padding: 3px;
+    margin-bottom: 10px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+  }
+
+  &__name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 15px;
+  }
+
+  &__job {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    margin-top: 5px;
+  }
+}

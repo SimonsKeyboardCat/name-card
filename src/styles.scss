@@ -1,3 +1,6 @@
+$primary-color: #f6d365;
+$secondary-color: #fda085;
+
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +12,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f4f4f4;
+  background: linear-gradient(120deg, $primary-color, $secondary-color);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

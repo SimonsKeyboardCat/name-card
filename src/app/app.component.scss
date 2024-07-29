@@ -1,21 +1,76 @@
+$name-card-background-color: #4070f4;
+$name-card-border-radius: 40px;
+$name-card-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+$name-card-image-border-color: #fff;
+$name-card-text-color: #333;
+$name-card-secondary-color: #666;
+$name-card-link-background-color: #4070f4;
+$name-card-button-primary-background-color: #4070f4;
+$name-card-button-primary-border-color: #244cbb;
+$name-card-button-secondary-background-color: #f4f4f4;
+$name-card-button-secondary-border-color: #000000;
+
+$name-card-max-width: 370px;
+$name-card-padding: 25px;
+$name-card-profile-width: 150px;
+$name-card-profile-height: 150px;
+$name-card-profile-padding: 3px;
+$name-card-profile-margin-bottom: 10px;
+$name-card-name-font-size: 22px;
+$name-card-name-font-weight: 700;
+$name-card-name-margin-top: 15px;
+$name-card-job-font-size: 16px;
+$name-card-job-font-weight: 500;
+$name-card-media-margin-top: 15px;
+$name-card-link-font-size: 18px;
+$name-card-link-height: 34px;
+$name-card-link-width: 34px;
+$name-card-link-margin: 0 8px;
+$name-card-description-font-size: 16px;
+$name-card-description-font-weight: 500;
+$name-card-description-margin-top: 15px;
+$name-card-contact-width: 300px;
+$name-card-contact-margin-top: 15px;
+$name-card-button-width: 120px;
+$name-card-button-padding: 10px 20px;
+$name-card-button-font-size: 16px;
+$name-card-button-font-weight: 500;
+$name-card-button-border-width: 1.8px;
+$name-card-button-border-radius: 30px;
+
 .name-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 370px;
+  align-items: center;
+  justify-content: center;
+  max-width: $name-card-max-width;
   width: 100%;
-  background: #fff;
-  border-radius: 24px;
-  padding: 25px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: $name-card-image-border-color;
+  border-radius: $name-card-border-radius;
+  padding: $name-card-padding;
+  box-shadow: $name-card-box-shadow;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $name-card-background-color;
+    width: 100%;
+    height: 30%;
+    border-radius: $name-card-border-radius;
+  }
 
   &__profile {
     position: relative;
-    width: 150px;
-    height: 150px;
+    align-self: center;
+    width: $name-card-profile-width;
+    height: $name-card-profile-height;
     border-radius: 50%;
-    background-color: #4070f4;
-    padding: 3px;
-    margin-bottom: 10px;
+    background-color: $name-card-background-color;
+    padding: $name-card-profile-padding;
+    margin-bottom: $name-card-profile-margin-bottom;
   }
 
   &__image {
@@ -23,26 +78,85 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 2px solid $name-card-image-border-color;
   }
 
   &__details {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #333;
+    color: $name-card-text-color;
   }
 
   &__name {
-    font-size: 22px;
-    font-weight: 700;
-    margin-top: 15px;
+    font-size: $name-card-name-font-size;
+    font-weight: $name-card-name-font-weight;
+    margin-top: $name-card-name-margin-top;
   }
 
   &__job {
-    font-size: 16px;
-    font-weight: 500;
-    color: #666;
+    font-size: $name-card-job-font-size;
+    font-weight: $name-card-job-font-weight;
+    color: $name-card-secondary-color;
     margin-top: 5px;
+  }
+
+  &__media {
+    display: flex;
+    align-items: center;
+    margin-top: $name-card-media-margin-top;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $name-card-image-border-color;
+    font-size: $name-card-link-font-size;
+    height: $name-card-link-height;
+    width: $name-card-link-width;
+    border-radius: 50%;
+    margin: $name-card-link-margin;
+    text-decoration: none;
+    background-color: $name-card-link-background-color;
+  }
+
+  &__description {
+    text-align: center;
+    font-size: $name-card-description-font-size;
+    font-weight: $name-card-description-font-weight;
+    color: $name-card-secondary-color;
+    margin-top: $name-card-description-margin-top;
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: $name-card-contact-width;
+    margin-top: $name-card-contact-margin-top;
+  }
+
+  &__button {
+    display: inline-block;
+    width: $name-card-button-width;
+    padding: $name-card-button-padding;
+    font-size: $name-card-button-font-size;
+    font-weight: $name-card-button-font-weight;
+    border: $name-card-button-border-width solid;
+    border-radius: $name-card-button-border-radius;
+    cursor: pointer;
+
+    &--primary {
+      background-color: $name-card-button-primary-background-color;
+      color: $name-card-image-border-color;
+      border-color: $name-card-button-primary-border-color;
+    }
+
+    &--secondary {
+      background-color: $name-card-button-secondary-background-color;
+      color: $name-card-button-secondary-border-color;
+      border-color: $name-card-button-secondary-border-color;
+    }
   }
 }
